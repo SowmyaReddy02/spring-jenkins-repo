@@ -13,7 +13,10 @@ public class SpringJenkinsApplication {
 	public String message() {
 		return "Spring jenkins project integrated";
  	}
-
+	@GetMapping("ping/{name}")
+	public String mess(@PathVariable String name) {
+		return "Welcome "+name;
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(SpringJenkinsApplication.class, args);
 	}
